@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="order.js"> </script>
+
+        <style>
+            #demo
+            {
+                border:1px solid;
+                padding: 10px;
+                box-shadow: 5px 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- <form action="" onsubmit="return alerts()"> -->
+        <label for="">Order ID:</label>
+        <input type="text" name="oid" id="orderid" value=" ">
+
+         <select id="pro" onchange="change()">
+            <option value=""></option>
+             <option value="book">Book</option>
+             <option value="pen">Pen</option>
+             <option value="pencil">Pencil</option>
+
+             <input type="text" id="price">
+             
+         <!-- <input type="submit" value="submit"> -->
+         <button onclick="alerts()">sumbit</button>
+         <div id="demo"></div>
+         </select>
+        </form>
+    </body>
+</html>

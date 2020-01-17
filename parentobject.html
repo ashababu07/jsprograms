@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html><head>
+    <script>
+        // var person=function()
+        // {
+        //     this.id=1
+        //     this.name="anu"
+        //     this.age=11
+
+        // }
+
+
+        var person={
+id:1,
+name:"anu",
+age:12
+        }
+        //var obj=Object.create(null)//new obj ne create cheyyan then null kodukkanam otherwise error
+        
+        
+        
+       // var obj=Object.create(person)
+        // console.log(obj)
+        // console.log(obj.name)
+        // obj.name="anna"
+        // console.log(obj.name)
+
+        var student=Object.create(person)
+        console.log(student)
+        console.log(student.name)
+        student.name="anna"  //new propertyyy //inherit cheyithathallaaaaa
+        console.log(student.name)
+        student.rollno=111    //new propertyyy
+
+
+        //inherit il change cheyyanamegil override aaakum
+        //anu change as alan
+
+        student.__proto__.name="alan"
+        console.log(student)
+
+
+
+
+        //freezing object
+//==========================================
+
+        // var obj={
+        //     a:100
+        // }
+        // Object.freeze(obj)
+        // obj.b=50
+        // obj.a=120
+        // console.log(obj)
+
+
+//  seal
+//============================
+
+  var obj={
+            a:100
+        }
+        Object.seal(obj)
+        obj.b=50
+        obj.a=120
+        console.log(obj)
+        
+//to check whether tthe object is freeze or seal
+console.log(Object.isFrozen(obj))
+console.log(Object.isSealed(obj))
+
+
+
+//itrerate
+for(i of Object.keys(student))
+{
+        console.log(i)
+}
+for(i of Object.values(student))
+{
+        console.log(i)
+}
+
+for([i,j] of Object.entries(student))    // in entries we get both keys  and values
+{
+console.log("key:",i)
+console.log("values:",j)
+}
+
+
+//assign    for copy
+//=================================================
+obj={
+        a:100,
+        b:200
+}
+test=Object.assign({},obj)
+console.log(test)
+
+
+var employee1={
+        id:"101",
+        name:"kevin",
+       // displayName:function()
+       displayName:function(msg,caller)  //parameter  aaayittu values pass cheyyummm
+        {
+                console.log(this.name)
+        }
+}
+var employee2={
+name:"ahana"
+}
+// employee1.displayName.call(employee2)   //emp1 1 il ullA fn ne emp2 il call cheyyan
+// employee1.displayName.apply(employee2) 
+
+
+employee1.displayName.call(employee2,"calling....","emp2") 
+employee1.displayName.apply(employee2,["calling....","emp2"]) 
+console.log(employee2)
+
+             //bind
+//==========================================
+
+test=employee1.displayName.bind(employee2,"calling......","emp2")
+console.log("printinggggg.........")
+console.log(test)
+console.log(typeof obj)
+test()
+
+
+
+
+
+          //currying
+//==================================
+
+
+        </script>
+</head></html>

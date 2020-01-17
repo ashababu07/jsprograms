@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <script>
+    function alertfn()
+    {
+        var t=document.getElementById("text1").value
+
+  var regex=/java/
+              
+              alert(regex.test(t))
+              var result=regex.test(input)
+              if(result)
+              {
+                  alert("processing....")
+              }
+              else{
+                  alert("invalid....")
+              }
+            }
+
+        </script>
+</head>
+<body>
+    <form action="" onsubmit="alertfn()">
+    <!-- <textarea name="" id="text1" cols="30" rows="10">
+        welcome to the java script page</textarea> -->
+        <input type="text" value="" id="text1">
+    <input type="submit" value="submit">
+</form>
+</body>
